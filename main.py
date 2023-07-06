@@ -5,8 +5,11 @@ guess = 0
 score = 0
 
 while guess != number:
-    guess = int(input("Enter guess: "))
-    score += 1
+    try:
+        guess = int(input("Enter guess: "))
+    except ValueError:
+        score += 1
+        print("Please enter a valid number!")
     
     if(guess < number):
         print("Guess higher!")
